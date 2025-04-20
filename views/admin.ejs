@@ -1,0 +1,30 @@
+<div class="container">
+  <h2>Admin Panel</h2>
+  <div class="admin-panel">
+    <h3>User Management</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Full Name</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% users.forEach(u => { %>
+          <tr>
+            <td><%= u.username %></td>
+            <td><%= u.name %></td>
+            <td>
+              <% if (!u.isCurrent) { %>
+                <a href="/delete?username=<%= u.username %>" class="delete-btn">Delete</a>
+              <% } else { %>
+                <span class="disabled">Cannot delete yourself</span>
+              <% } %>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</div>

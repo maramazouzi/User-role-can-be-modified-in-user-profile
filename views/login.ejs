@@ -1,0 +1,23 @@
+<div class="container">
+  <form method="POST" action="/login" class="login-form">
+    <h2>Login</h2>
+    <% if (typeof error !== 'undefined' && error) { %>
+      <div class="error"><%= error %></div>
+    <% } %>
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+    <button type="submit">Login</button>
+  </form>
+  <p>Test accounts:</p>
+  <ul class="test-accounts">
+    <li>Admin: admin / admin123</li>
+    <li>Regular user: wiener / peter</li>
+    <li>Another user: carlos / password</li>
+  </ul>
+</div>

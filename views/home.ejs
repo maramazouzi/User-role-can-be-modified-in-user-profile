@@ -1,0 +1,11 @@
+<div class="container">
+  <h2>Welcome to our application</h2>
+  <% if (!user) { %>
+    <p>Please <a href="/login">login</a> to continue</p>
+  <% } else { %>
+    <p>Visit your <a href="/profile">profile page</a></p>
+    <% if (user.isAdmin) { %>
+      <p>or go to <a href="/admin">admin panel</a></p>
+    <% } %>
+  <% } %>
+</div>

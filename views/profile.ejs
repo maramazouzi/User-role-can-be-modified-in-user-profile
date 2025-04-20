@@ -1,0 +1,14 @@
+<div class="container">
+  <h2>User Profile</h2>
+  <div class="profile-info">
+    <p><strong>Username:</strong> <%= user.username %></p>
+    <p><strong>Full Name:</strong> <%= user.name %></p>
+    <p><strong>Role:</strong> <%= user.isAdmin ? 'Administrator' : 'Regular User' %></p>
+  </div>
+  
+  <% if (user.isAdmin) { %>
+    <div class="admin-actions">
+      <a href="/admin" class="btn">Go to Admin Panel</a>
+    </div>
+  <% } %>
+</div>
